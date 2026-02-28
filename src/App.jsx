@@ -1,5 +1,5 @@
 import React from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import MainLayout from './Layouts/MainLayout/MainLayout'
 import NewFeed from './component/Pages/NewFeed/NewFeed'
 import PostDetails from './component/Pages/PostDetails/PostDetails'
@@ -15,7 +15,7 @@ import ChangePassword from './component/ChangePassword/ChangePassword'
 
 
 export default function App() {
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {path:'/',element:<MainLayout/>,children:[
       {index:true , element :<AppProtectedRoutes> <NewFeed/> </AppProtectedRoutes> },
       {path: 'post/:id' , element : <AppProtectedRoutes> <PostDetails/> </AppProtectedRoutes> },
